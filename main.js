@@ -13,7 +13,6 @@ function playRound(playerSelection, computerSelection) {
   ) {
     playerScore++;
     roundWinner = "player";
-    playerPoints.textContent = `player Score: ${playerScore}`;
   }
   if (
     (computerSelection === "rock" && playerSelection === "scissors") ||
@@ -22,7 +21,6 @@ function playRound(playerSelection, computerSelection) {
   ) {
     computerScore++;
     roundWinner = "computer";
-    computerPoints.textContent = `Computer Score: ${computerScore}`;
   }
 }
 
@@ -45,19 +43,59 @@ const scissorsBtn = document.getElementById("scissorsBtn");
 const scoreMessage = document.getElementById("scoreMessage");
 const playerPoints = document.getElementById("playerPoints");
 const computerPoints = document.getElementById("computerPoints");
+const playerSign = document.getElementById("playerSign");
+const computerSign = document.getElementById("computerSign");
+const endGameModal = document.getElementById("endGameModal");
+const overlay = document.getElementById("overlay");
+const winnerText = document.getElementById("winnerText");
+const playAgainBtn = document.getElementById("playAgainBtn");
 
 rockBtn.addEventListener("click", () => handleClick("rock"));
 paperBtn.addEventListener("click", () => handleClick("paper"));
 scissorsBtn.addEventListener("click", () => handleClick("scissors"));
+playAgainBtn.addEventListener("click", newGame);
 
 function handleClick(playerSelection) {
   const computerSelection = computerGuess();
 
   playRound(playerSelection, computerSelection);
+  updateScore();
 
-  //   console.log(playerSelection);
-  //   console.log(playerScore);
-  //   console.log(computerScore);
+  playerSign.textContent = `You played ${playerSelection}!`;
+  computerSign.textContent = `Computer played ${computerSelection}!`;
+
   console.log(roundWinner);
-  //   console.log(computerSelection);
+}
+
+function updateScore() {
+  if (roundWinner === "tie") {
+    scoreMessage.textContent = "It's a tie!";
+  } else if (roundWinner === "player") {
+    scoreMessage.textContent = "You won!";
+  } else if (roundWinner === "computer") {
+    scoreMessage.textContent = "You lost!";
+  }
+
+  if (playerScore === 5 || computerScore === 5) {
+    return showEndGameModal();
+  }
+  playerPoints.textContent = `Player Score: ${playerScore}`;
+  computerPoints.textContent = `Computer Score: ${computerScore}`;
+}
+
+function showEndGameModal() {
+  if (playerScore === 5) {
+    winnerText.textContent = "You defeated the computer and won the game!";
+  } else {
+    winnerText.textContent = "You're shit! beaten by a computer =D";
+  }
+
+  overlay.classList.remove("endgame-modal-overlay");
+  overlay.classList.add("endgame-modal-overlay-active");
+  endGameModal.classList.remove("endgame-modal-window");
+  endGameModal.classList.add("endgame-modal-window-active");
+}
+
+function newGame() {
+  window.location.reload();
 }

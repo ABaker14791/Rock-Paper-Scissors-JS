@@ -6,6 +6,15 @@
 
 body {
   font-family: sans-serif;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: rgb(209, 69, 92);
+  color: #fff;
 }
 
 .container {
@@ -14,7 +23,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 50px;
-  min-height: 100vh;
+  min-height: calc(100vh - 77px);
 }
 
 .user-pick button {
@@ -27,4 +36,72 @@ body {
   margin: 0 20px;
   border: none;
   border-radius: 6px;
+}
+
+/* game info styles */
+.game-info {
+  max-width: 600px;
+  width: 100%;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.score-announcement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.battle-field {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* End game modal styles */
+.endgame-modal-overlay {
+  display: none;
+}
+
+.endgame-modal-overlay-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22, 22, 22, 0.518);
+}
+
+.endgame-modal-window {
+  display: none;
+}
+
+.endgame-modal-window-active {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 400px;
+  width: 600px;
+}
+
+.play-again-btn {
+  padding: 1rem 1.6rem;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
