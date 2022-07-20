@@ -9,23 +9,31 @@
   </head>
   <body>
     <header><h1>Rock, Paper, Scissors Game</h1></header>
+    <div class="games-list">
+      <a href="/" class="nav-link">Rock, Paper Scissors</a>
+      <a href="/noughts+crosses" class="nav-link">Noughts + Crosses</a>
+    </div>
+
     <div class="container">
       <h2>First to 5 wins the game.</h2>
       <div class="game-info">
-        <div class="scoreboard">
+        <div class="player">
           <p id="playerPoints">Player Score: 0</p>
-          <p id="computerPoints">Computer Score: 0</p>
+          <p id="playerSign">?</p>
         </div>
+
         <div class="score-announcement">
           <p id="scoreMessage">Rock > Scissors > Paper > Rock</p>
         </div>
 
-        <div class="battle-field">
-          <p id="playerSign">?</p>
+        <div class="computer">
+          <p id="computerPoints">Computer Score: 0</p>
+
           <p id="computerSign">?</p>
         </div>
       </div>
 
+      <h5 class="selection-heading">Take your pick</h5>
       <div class="user-pick">
         <button class="rock" id="rockBtn">Rock</button>
         <button class="paper" id="paperBtn">Paper</button>
@@ -34,7 +42,7 @@
     </div>
     <div class="endgame-modal-overlay" id="overlay">
       <div class="endgame-modal-window" id="endGameModal">
-        <h4>Game Finished!</h4>
+        <h4 id="winnerHeading">Game Finished!</h4>
         <p id="winnerText">Who wins?</p>
         <button class="play-again-btn" id="playAgainBtn">Play Again?</button>
       </div>

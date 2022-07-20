@@ -17,13 +17,34 @@ header {
   color: #fff;
 }
 
+.games-list {
+  height: 23px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: #000;
+}
+
+.games-list a {
+  text-decoration: none;
+  color: #000;
+}
+
+.games-list a:hover {
+  color: coral;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 50px;
-  min-height: calc(100vh - 77px);
+  min-height: calc(100vh - 100px);
+}
+
+.selection-heading {
+  margin-bottom: -20px;
 }
 
 .user-pick button {
@@ -33,21 +54,34 @@ header {
   text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
-  margin: 0 20px;
+  /* margin: 0 20px; */
   border: none;
   border-radius: 6px;
 }
 
 /* game info styles */
 .game-info {
-  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
   width: 100%;
 }
 
-.scoreboard {
+.player {
   display: flex;
-  justify-content: space-between;
-  gap: 50px;
+  flex-direction: column;
+  gap: 20px;
+  background-color: green;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 36px 16px;
+  border-radius: 6px;
+  min-width: 250px;
+  text-align: center;
+}
+
+#playerPoints {
+  font-size: 1rem;
 }
 
 .score-announcement {
@@ -57,10 +91,21 @@ header {
   margin: 20px 0;
 }
 
-.battle-field {
+.computer {
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  flex-direction: column;
+  gap: 20px;
+  background-color: red;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 36px 16px;
+  border-radius: 6px;
+  min-width: 250px;
+  text-align: center;
+}
+
+#computerPoints {
+  font-size: 1rem;
 }
 
 /* End game modal styles */
@@ -91,6 +136,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 6px;
   align-items: center;
   gap: 40px;
   height: 400px;
@@ -104,4 +150,11 @@ header {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media (max-width: 678px) {
+  .game-info {
+    flex-direction: column;
+    width: 90%;
+  }
 }

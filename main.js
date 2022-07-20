@@ -47,6 +47,7 @@ const playerSign = document.getElementById("playerSign");
 const computerSign = document.getElementById("computerSign");
 const endGameModal = document.getElementById("endGameModal");
 const overlay = document.getElementById("overlay");
+const winnerHeading = document.getElementById("winnerHeading");
 const winnerText = document.getElementById("winnerText");
 const playAgainBtn = document.getElementById("playAgainBtn");
 
@@ -63,8 +64,6 @@ function handleClick(playerSelection) {
 
   playerSign.textContent = `You played ${playerSelection}!`;
   computerSign.textContent = `Computer played ${computerSelection}!`;
-
-  console.log(roundWinner);
 }
 
 function updateScore() {
@@ -85,17 +84,21 @@ function updateScore() {
 
 function showEndGameModal() {
   if (playerScore === 5) {
+    winnerHeading.textContent = "Winner!";
     winnerText.textContent = "You defeated the computer and won the game!";
   } else {
-    winnerText.textContent = "You're shit! beaten by a computer =D";
+    winnerHeading.textContent = "You lose!";
+    winnerText.textContent = "You're sh*t! Beaten by a computer!";
   }
 
+  // TODO: can i use toggle here to simplify this code?
   overlay.classList.remove("endgame-modal-overlay");
   overlay.classList.add("endgame-modal-overlay-active");
   endGameModal.classList.remove("endgame-modal-window");
   endGameModal.classList.add("endgame-modal-window-active");
 }
 
+// TODO: Reset scores rather than refreshing page
 function newGame() {
   window.location.reload();
 }
