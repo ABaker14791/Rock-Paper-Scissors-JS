@@ -109,12 +109,9 @@ header {
 }
 
 /* End game modal styles */
+
 .endgame-modal-overlay {
   display: none;
-}
-
-.endgame-modal-overlay-active {
-  display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -129,11 +126,7 @@ header {
 
 .endgame-modal-window {
   display: none;
-}
-
-.endgame-modal-window-active {
   background-color: #fff;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 6px;
@@ -141,6 +134,10 @@ header {
   gap: 40px;
   height: 400px;
   width: 600px;
+}
+
+.active {
+  display: flex;
 }
 
 .play-again-btn {

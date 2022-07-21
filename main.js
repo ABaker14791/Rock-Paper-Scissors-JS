@@ -88,14 +88,11 @@ function showEndGameModal() {
     winnerText.textContent = "You defeated the computer and won the game!";
   } else {
     winnerHeading.textContent = "You lose!";
-    winnerText.textContent = "You're sh*t! Beaten by a computer!";
+    winnerText.textContent = "Beaten by a computer!";
   }
 
-  // TODO: can i use toggle here to simplify this code?
-  overlay.classList.remove("endgame-modal-overlay");
-  overlay.classList.add("endgame-modal-overlay-active");
-  endGameModal.classList.remove("endgame-modal-window");
-  endGameModal.classList.add("endgame-modal-window-active");
+  overlay.classList.toggle("active");
+  endGameModal.classList.toggle("active");
 }
 
 // TODO: Reset scores rather than refreshing page
