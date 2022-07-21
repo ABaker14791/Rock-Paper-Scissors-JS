@@ -54,7 +54,6 @@ header {
   text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
-  /* margin: 0 20px; */
   border: none;
   border-radius: 6px;
 }
@@ -80,8 +79,12 @@ header {
   text-align: center;
 }
 
+.player i {
+  font-size: 3rem;
+}
+
 #playerPoints {
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 
 .score-announcement {
@@ -104,8 +107,12 @@ header {
   text-align: center;
 }
 
+.computer i {
+  font-size: 3rem;
+}
+
 #computerPoints {
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 
 /* End game modal styles */

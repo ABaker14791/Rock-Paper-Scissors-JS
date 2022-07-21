@@ -62,8 +62,21 @@ function handleClick(playerSelection) {
   playRound(playerSelection, computerSelection);
   updateScore();
 
-  playerSign.textContent = `You played ${playerSelection}!`;
-  computerSign.textContent = `Computer played ${computerSelection}!`;
+  if (playerSelection === "rock") {
+    playerSign.setAttribute("class", "fa-solid fa-hand-back-fist");
+  } else if (playerSelection === "paper") {
+    playerSign.setAttribute("class", "fa-solid fa-hand");
+  } else {
+    playerSign.setAttribute("class", "fa-solid fa-hand-scissors");
+  }
+
+  if (computerSelection === "rock") {
+    computerSign.setAttribute("class", "fa-solid fa-hand-back-fist");
+  } else if (computerSelection === "paper") {
+    computerSign.setAttribute("class", "fa-solid fa-hand");
+  } else {
+    computerSign.setAttribute("class", "fa-solid fa-hand-scissors");
+  }
 }
 
 function updateScore() {
